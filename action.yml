@@ -1,0 +1,20 @@
+# action.yml
+name: 'Search Docker Tag'
+description: 'Search for last docker tag matching given pattern.'
+inputs:
+  image:
+    description: 'Full name of the image (as in: example/image, library/redis)'
+    required: true
+  search:
+    description: 'A python regex pattern that searched tag must match.'
+    required: false
+    default: '.+'
+outputs:
+  tag:
+    description: 'ID of the first matching tag.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.image }}
+    - ${{ inputs.search }}
