@@ -1,6 +1,9 @@
 # action.yml
 name: 'Search Docker Tag'
 description: 'Search for last docker tag matching given pattern.'
+branding:
+  icon: search
+  color: blue
 inputs:
   image:
     description: 'Full name of the image (as in: example/image, library/redis)'
